@@ -1,0 +1,76 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* --- Khu vực Xem Trước (Preview Area) --- */
+#preview-area {
+    margin-bottom: 30px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+#preview {
+    width: 100%;
+    /* Giữ tỷ lệ khung hình cho ảnh xem trước */
+    max-height: 400px; 
+    object-fit: contain; /* Đảm bảo ảnh không bị cắt xén */
+    display: block;
+    margin: 0 auto 15px;
+    border-radius: 4px;
+}
+
+#caption {
+    font-size: 1.2em;
+    color: #333;
+    min-height: 2em; /* Giúp giữ không gian khi mô tả ngắn */
+}
+
+/* --- Thư Viện Ảnh (Gallery) --- */
+.gallery {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các figure xuống dòng nếu không đủ chỗ */
+    justify-content: center;
+    gap: 15px;
+}
+
+.gallery figure {
+    /* Đặt kích thước cơ bản cho các ảnh nhỏ */
+    width: 140px; 
+    height: 140px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    border: 3px solid transparent; /* Khung mặc định */
+    transition: all 0.2s ease-in-out;
+    border-radius: 4px;
+    /* Rất quan trọng cho accessibility: làm cho figure có thể focus */
+    outline: none; 
+}
+
+.gallery figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo ảnh lấp đầy figure */
+    display: block;
+    border-radius: 4px;
+}
+
+/* Hiệu ứng tương tác: Mouseover và Focus */
+.gallery figure:hover,
+.gallery figure:focus {
+    border-color: #007bff; /* Thay đổi màu viền khi hover hoặc focus */
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+    transform: scale(1.05); /* Phóng to nhẹ */
+}
